@@ -1,17 +1,16 @@
 package br.com.application.name.reports.evidence;
 
+import org.apache.commons.codec.binary.Base64;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import javax.imageio.ImageIO;
-
-import org.apache.commons.codec.binary.Base64;
 
 
 /**
  * Bean to store evidence message and image in a BASE64Decoder
  *
- * @author Aleksander Ramos - Yaman
  */
 public final class SeleniumEvidence {
 

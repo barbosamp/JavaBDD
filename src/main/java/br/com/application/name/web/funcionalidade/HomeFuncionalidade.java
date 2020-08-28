@@ -1,29 +1,22 @@
 package br.com.application.name.web.funcionalidade;
 
 import br.com.application.name.commons.BaseTest;
-import br.com.application.name.web.funcionalidade.interfaces.MenuHome;
-import br.com.application.name.web.funcionalidade.enums.OpcaoMenuImpl;
-import br.com.application.name.web.pages.MapeamentoETrabalhandoComMenus;
-
-/***
- * @author marcos.barbosa
- */
+import br.com.application.name.web.pages.HomePage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomeFuncionalidade extends BaseTest {
 
-    private MapeamentoETrabalhandoComMenus home;
+    private HomePage homePage;
 
     public HomeFuncionalidade(){
-        this.home = new MapeamentoETrabalhandoComMenus(webDriver);
+        this.homePage = new HomePage(webDriver);
     }
 
-
-
-    public void selecionaMenuTelaInicial(String aba){
-        MenuHome opcaoCard = OpcaoMenuImpl.valueOf(aba.replace(" ", "_").toUpperCase());
-        addEvidenciaWeb("Menu " + '"' + aba + '"' + " selecionado com sucesso");
-        opcaoCard.getElement(home).click();
-
+    public void acessaRegistroNovoUsuario(){
+        wait.until(ExpectedConditions.visibilityOf(this.homePage.getLblLogoInicial()));
+        this.homePage.getBtMyAccount().click();
+        addEvidenciaWeb("Acessando tela de registro.");
+        this.homePage.getBtRegister().click();
     }
 
 

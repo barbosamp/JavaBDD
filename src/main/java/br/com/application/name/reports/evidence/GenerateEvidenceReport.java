@@ -1,5 +1,15 @@
 package br.com.application.name.reports.evidence;
 
+import br.com.application.name.reports.ExcelReport;
+import br.com.application.name.reports.Query;
+import br.com.application.name.reports.model.TestData;
+import cucumber.api.Scenario;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRDocxExporterParameter;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,26 +20,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.imageio.ImageIO;
-
-import br.com.application.name.reports.model.TestData;
-import br.com.application.name.reports.ExcelReport;
-import br.com.application.name.reports.Query;
-import cucumber.api.Scenario;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
-import net.sf.jasperreports.engine.export.ooxml.JRDocxExporterParameter;
-
 /**
  * Generate the test evidence in PDF file
- * 
- * @author Aleksander Ramos - Yaman
+ *
  */
 public class GenerateEvidenceReport {
 

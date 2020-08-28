@@ -1,10 +1,10 @@
 package br.com.application.name.reports;
 
+import com.rajatthareja.reportbuilder.ReportBuilder;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.rajatthareja.reportbuilder.ReportBuilder;
 
 public class generateHTMLReport {
 

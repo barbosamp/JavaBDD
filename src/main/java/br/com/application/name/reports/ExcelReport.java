@@ -1,24 +1,16 @@
 package br.com.application.name.reports;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
-import javax.mail.Address;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 public class ExcelReport {
 
@@ -51,10 +43,10 @@ public class ExcelReport {
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("silvarjronaldo@gmail.com")); // Remetente
+			message.setFrom(new InternetAddress("")); // Remetente
 
 			Address[] toUser = InternetAddress // Destinatário(s)
-					.parse("ronaldo.silva@yaman.com.br");
+					.parse("");
 			
 			// Set Subject: header field
 			message.setSubject("Relatório Execução Regressivo");
