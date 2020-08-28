@@ -108,7 +108,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>27.0-jre</version>
+			<version>24.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.codoid.products</groupId>
@@ -237,12 +237,6 @@
 			<groupId>ru.yandex.qatools.ashot</groupId>
 			<artifactId>ashot</artifactId>
 			<version>1.4.12</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>24.0-jre</version>
 		</dependency>
 		<dependency>
 			<groupId>com.codoid.products</groupId>
