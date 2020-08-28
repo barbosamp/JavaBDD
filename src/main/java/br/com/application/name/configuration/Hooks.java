@@ -59,7 +59,7 @@ public class Hooks extends BaseTest {
 	@Before(value = "@web")
 	public void beforeScenarioWebWindows() {
 		System.out.println("Teste execução Hooks Web");
-		initializeWebApplication(Web.CHROME);
+		initializeWebApplication(Web.CHROME_WINDOWS);
 	}
 
 	@After(value = "@cockpit")

@@ -269,8 +269,7 @@ public class GenerateEvidenceReport {
 
 			JRBeanCollectionDataSource datasource = new JRBeanCollectionDataSource(data);
 
-			JasperPrint jasperPrint = JasperFillManager.fillReport(properties.getProperty("evidence.file"), parameters,
-					datasource);
+//			JasperPrint jasperPrint = JasperFillManager.fillReport(properties.getProperty("evidence.file"), parameters,datasource);
 
 			TestData testData = new TestData();
 			testData.setProject(project);
@@ -280,7 +279,7 @@ public class GenerateEvidenceReport {
 			
 			switch (reportType) {
 			case PDF:
-				JasperExportManager.exportReportToPdfFile(jasperPrint, evidenceDir + reportName + ".pdf");
+//				JasperExportManager.exportReportToPdfFile(jasperPrint, evidenceDir + reportName + ".pdf");
 				break;
 
 			case DOC:
@@ -293,7 +292,7 @@ public class GenerateEvidenceReport {
 				File archivo = new File(evidenceDir + reportNameDoc +".doc");
 				FileOutputStream os = new FileOutputStream(archivo);
 
-				exporter.setParameter(JRDocxExporterParameter.JASPER_PRINT, jasperPrint);
+//				exporter.setParameter(JRDocxExporterParameter.JASPER_PRINT, jasperPrint);
 				exporter.setParameter(JRDocxExporterParameter.CHARACTER_ENCODING, "UTF-8");
 				exporter.setParameter(JRDocxExporterParameter.OUTPUT_STREAM, os);
 
@@ -304,7 +303,7 @@ public class GenerateEvidenceReport {
 				break;
 
 			case HTML:
-				JasperExportManager.exportReportToHtmlFile(jasperPrint, evidenceDir + reportName + ".html");
+//				JasperExportManager.exportReportToHtmlFile(jasperPrint, evidenceDir + reportName + ".html");
 				break;
 
 			default:
@@ -321,7 +320,7 @@ public class GenerateEvidenceReport {
 	/**
 	 * Create a directory with the project's name
 	 * 
-	 * @param project
+	 * @param
 	 *            project name
 	 */
 	private static boolean createEvidenceDir(String directory) {
