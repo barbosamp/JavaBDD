@@ -6,7 +6,6 @@ import java.util.Properties;
 
 /**
  * Class with shared methods and action to Selenium Evidence
- * @author Aleksander Ramos - Yaman
  */
 public class SeleniumEvidenceUtils {
 

@@ -12,8 +12,8 @@ import java.util.List;
 
 public class Evidence {
 
-	private final String project = "Força de Venda_Cockpit – FV";
-	private final String environment = "Homologação";
+	private final String project = "Your Store";
+	private final String environment = "Production";
 	private String ctName;
 	private String cycle;
 	private String tester;

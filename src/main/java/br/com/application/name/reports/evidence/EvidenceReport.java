@@ -2,10 +2,6 @@ package br.com.application.name.reports.evidence;
 
 import java.util.List;
 
-/**
- * Aleksander Ramos - Yaman
- */
-
 
 public class EvidenceReport {
 

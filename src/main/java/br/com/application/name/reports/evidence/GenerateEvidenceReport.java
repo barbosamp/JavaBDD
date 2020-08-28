@@ -1,5 +1,15 @@
 package br.com.application.name.reports.evidence;
 
+import br.com.application.name.reports.ExcelReport;
+import br.com.application.name.reports.Query;
+import br.com.application.name.reports.model.TestData;
+import cucumber.api.Scenario;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRDocxExporterParameter;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,26 +20,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.imageio.ImageIO;
-
-import br.com.application.name.reports.model.TestData;
-import br.com.application.name.reports.ExcelReport;
-import br.com.application.name.reports.Query;
-import cucumber.api.Scenario;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
-import net.sf.jasperreports.engine.export.ooxml.JRDocxExporterParameter;
-
 /**
  * Generate the test evidence in PDF file
- * 
- * @author Aleksander Ramos - Yaman
+ *
  */
 public class GenerateEvidenceReport {
 
@@ -248,18 +241,10 @@ public class GenerateEvidenceReport {
 			parameters.put("SEL_LABEL_PROJECT", properties.getProperty("label.projetc"));
 			parameters.put("SEL_LABEL_TESTER", properties.getProperty("label.tester"));
 			parameters.put("SEL_LABEL_STATUS", properties.getProperty("label.status"));
-			switch (scenario.getStatus()) {
-			case "passed":
+			if ("passed".equals(scenario.getStatus())) {
 				parameters.put("SEL_LABEL_PASS", scenario.getStatus().toLowerCase());
-				break;
-			case "failed":
-				parameters.put("SEL_LABEL_FAILED", scenario.getStatus().toLowerCase());
-				break;
-			case "null":
-				parameters.put("SEL_LABEL_FAILED", "falhou".toLowerCase());
-				break;
-			default:
-				break;
+			} else {
+				parameters.put("SEL_LABEL_FAILED", "Failed");
 			}
 			parameters.put("SEL_LABEL_EVIDENCE_REPORT", properties.getProperty("label.evidenceReport"));
 			parameters.put("SEL_LABEL_DATE", properties.getProperty("label.date"));
@@ -269,7 +254,7 @@ public class GenerateEvidenceReport {
 
 			JRBeanCollectionDataSource datasource = new JRBeanCollectionDataSource(data);
 
-//			JasperPrint jasperPrint = JasperFillManager.fillReport(properties.getProperty("evidence.file"), parameters,datasource);
+			JasperPrint jasperPrint = JasperFillManager.fillReport(properties.getProperty("evidence.file"), parameters,datasource);
 
 			TestData testData = new TestData();
 			testData.setProject(project);
@@ -279,7 +264,7 @@ public class GenerateEvidenceReport {
 			
 			switch (reportType) {
 			case PDF:
-//				JasperExportManager.exportReportToPdfFile(jasperPrint, evidenceDir + reportName + ".pdf");
+				JasperExportManager.exportReportToPdfFile(jasperPrint, evidenceDir + reportName + ".pdf");
 				break;
 
 			case DOC:
@@ -292,7 +277,7 @@ public class GenerateEvidenceReport {
 				File archivo = new File(evidenceDir + reportNameDoc +".doc");
 				FileOutputStream os = new FileOutputStream(archivo);
 
-//				exporter.setParameter(JRDocxExporterParameter.JASPER_PRINT, jasperPrint);
+				exporter.setParameter(JRDocxExporterParameter.JASPER_PRINT, jasperPrint);
 				exporter.setParameter(JRDocxExporterParameter.CHARACTER_ENCODING, "UTF-8");
 				exporter.setParameter(JRDocxExporterParameter.OUTPUT_STREAM, os);
 
@@ -303,7 +288,7 @@ public class GenerateEvidenceReport {
 				break;
 
 			case HTML:
-//				JasperExportManager.exportReportToHtmlFile(jasperPrint, evidenceDir + reportName + ".html");
+				JasperExportManager.exportReportToHtmlFile(jasperPrint, evidenceDir + reportName + ".html");
 				break;
 
 			default:
@@ -321,7 +306,7 @@ public class GenerateEvidenceReport {
 	 * Create a directory with the project's name
 	 * 
 	 * @param
-	 *            project name
+	 *
 	 */
 	private static boolean createEvidenceDir(String directory) {
 		boolean dirExists = false;

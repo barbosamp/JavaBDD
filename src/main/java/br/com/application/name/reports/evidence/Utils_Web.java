@@ -1,16 +1,15 @@
 package br.com.application.name.reports.evidence;
 
-import java.util.List;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import java.util.List;
+
 public class Utils_Web {
 	
 	/**
-	 * Aleksander Ramos - Yaman
 	 * @throws Exception 
 	 */
 

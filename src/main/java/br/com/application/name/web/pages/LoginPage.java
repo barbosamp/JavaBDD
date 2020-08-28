@@ -1,50 +1,34 @@
 package br.com.application.name.web.pages;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-	
 
-	@FindBy(id = "email")
-	private WebElement inputUser;
-	
-	@FindBy(id = "senha")
-	private WebElement inputPass;
-	
-	@FindBy(xpath = "//button[@class='btn btn-primary']")
-	private WebElement buttonLogin;
+    public LoginPage(WebDriver webDriver) {
+        PageFactory.initElements(webDriver, this);
+    }
 
-	@FindBy(xpath = "//div[@class='alert alert-danger']")
-	private WebElement mensagem;
-	
-	
-	public LoginPage(WebDriver webDriver) {
-		PageFactory.initElements(webDriver, this);
-	}
-	
+    @FindBy(id = "input-email")
+    private WebElement emailAddress;
 
-	// **********************getter and setters**********************//
+    @FindBy(id = "input-password")
+    private WebElement password;
 
+    @FindBy(xpath = "//input[@class='btn btn-primary']")
+    private WebElement btLogin;
 
-	public WebElement getMensagem() {
-		return mensagem;
-	}
+    public WebElement getEmailAddress() {
+        return emailAddress;
+    }
 
-	public WebElement getInputUser() {
-		return inputUser;
-	}
+    public WebElement getPassword() {
+        return password;
+    }
 
-	public WebElement getInputPass() {
-		return inputPass;
-	}
-
-	public WebElement getBtnLogin() {
-		return buttonLogin;
-	}
-
-
+    public WebElement getBtLogin() {
+        return btLogin;
+    }
 }
