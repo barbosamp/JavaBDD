@@ -128,7 +128,7 @@
 				<textFieldExpression><![CDATA[$P{SEL_LABEL_FAILED}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement mode="Opaque" x="1" y="0" width="519" height="20" backcolor="#FF9D4D" uuid="5bcdcc49-c172-4a17-b790-5a1dc5b4834c"/>
+				<reportElement mode="Opaque" x="1" y="0" width="519" height="20" backcolor="#d40d27" uuid="5bcdcc49-c172-4a17-b790-5a1dc5b4834c"/>
 				<box leftPadding="150">
 					<pen lineWidth="0.75"/>
 				</box>

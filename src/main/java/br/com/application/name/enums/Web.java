@@ -15,9 +15,7 @@ public enum Web implements WebApplication {
 
 		@Override
 		public WebDriver getDriver() {
-//			ChromeOptions op = new ChromeOptions();
-//			op.setHeadless(true);
-			System.setProperty("webdriver.chrome.driver","chromedriver");
+			System.setProperty("webdriver.chrome.driver","chrome/mac/chromedriver");
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("profile.default_content_setting_values.notifications", 2);
 			ChromeOptions options = new ChromeOptions();
@@ -32,7 +30,7 @@ public enum Web implements WebApplication {
 
 		@Override
 		public WebDriver getDriver() {
-			System.setProperty("webdriver.chrome.driver","chromewindows/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","chrome/windows/chromedriver.exe");
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("profile.default_content_setting_values.notifications", 2);
 			ChromeOptions options = new ChromeOptions();
@@ -41,15 +39,5 @@ public enum Web implements WebApplication {
 		}
 		
 	},
-	
-	FIREFOX {
-
-		@Override
-		public WebDriver getDriver() {
-			System.setProperty("webdriver.gecko.driver", "geckodriver");
-			return new FirefoxDriver();
-		}
-		
-	}
 
 }

@@ -20,6 +20,7 @@ public class RegistroFuncionalidade extends BaseTest {
         super.propertiesManager.setPropertieValue("EMAIL", dataGenerator.getEmail());
         this.registroPage.getInputTelephone().sendKeys(dataGenerator.getTelephone());
         this.registroPage.getInputPassword().sendKeys(dataGenerator.getPassword());
+        super.propertiesManager.setPropertieValue("PASSWORD", dataGenerator.getPassword());
         this.registroPage.getInputConfirmPassword().sendKeys(dataGenerator.getConfirmPassword());
         addEvidenciaWeb("Formulário preenchido!");
     }

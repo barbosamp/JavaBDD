@@ -12,15 +12,17 @@ public class Hooks extends BaseTest {
 	@Before(value = "@web")
 	public void beforeScenarioWebWindows() {
 		System.out.println("Teste execução Hooks Web");
-		initializeWebApplication(Web.CHROME_WINDOWS);
+		initializeWebApplication();
 	}
 
 
 	@After(value = "@web")
 	public void afterScenarioWeb(Scenario scenario) {
+		closeWeb();
+		System.out.println("Gerando Evidencias....");
 		generateEvidence(scenario);
 		evidenceList.clear();
-		closeWeb();
+
 	}
 
 }

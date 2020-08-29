@@ -1,5 +1,6 @@
 package br.com.application.name.commons;
 
+import br.com.application.name.enums.Web;
 import br.com.application.name.interfaces.WebApplication;
 import br.com.application.name.reports.evidence.Evidence;
 import br.com.application.name.reports.evidence.SeleniumEvidence;
@@ -26,6 +27,7 @@ public class BaseTest {
 	protected static boolean initialized;
 	protected static DataGenerator dataGenerator = new DataGenerator();
 	protected PropertiesManager propertiesManager = new PropertiesManager();
+	private WebApplication webApplication;
 
 	public static Evidence evidence;
 
@@ -53,12 +55,16 @@ public class BaseTest {
 	/**
 	 * Inicializa o {@code WebDriver} e o {@code WebDriverWait}
 	 */
-	protected void initializeWebApplication(WebApplication webApplication) {
-
+	protected void initializeWebApplication() {
+		if(getOsName().toLowerCase().contains("win")){
+			webApplication = Web.CHROME_WINDOWS;
+		} else{
+			webApplication = Web.CHROME;
+		}
 		webDriver = webApplication.getDriver();
 		webDriver.manage().window().maximize();
 		webDriver.get(PropertiesManager.getPropertiesValue("URL_QA"));
-		wait = new WebDriverWait(webDriver, 80);
+		wait = new WebDriverWait(webDriver, 20);
 	}
 
 	/**
@@ -107,6 +113,10 @@ public class BaseTest {
 	 */
 	private String takeScreenshot(WebDriver driver) {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+	}
+
+	public String getOsName(){
+		return System.getProperty("os.name");
 	}
 
 }

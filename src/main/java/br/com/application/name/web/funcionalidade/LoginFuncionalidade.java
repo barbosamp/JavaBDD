@@ -20,10 +20,8 @@ public class LoginFuncionalidade extends BaseTest {
         Credentials credentials = UserCredential.valueOf(tipoUsuario.toUpperCase());
         this.loginPage.getEmailAddress().sendKeys(credentials.email());
         this.loginPage.getPassword().sendKeys(credentials.password());
-        addEvidenciaWeb("Credenciais inseridas. " +
-                "Email: " + credentials.email() + "\n Senha: " + credentials.password() );
+        addEvidenciaWeb("Credenciais inseridas.");
         this.loginPage.getBtLogin().click();
-
     }
 
 
