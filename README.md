@@ -1,4 +1,4 @@
-<h1 align="center">Automação Salsa Technology</h1>
+<h1 align="center">Automação Web</h1>
 <h1 align="center">
     <a href="https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html">🔗 Java</a>
     <a href="https://www.selenium.dev/">🔗 Selenium</a>
