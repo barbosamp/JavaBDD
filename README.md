@@ -102,7 +102,7 @@ tags = {"@login"})
 #### [IntelliJ] Para executar o projeto basta clicar com o botão direito do mouse -> Run 'RunTest'
 
 ## Evidências
-As evidêcnias dos testes estão localizadas após a execução em: 
+As evidências dos testes estão localizadas após a execução em: 
 ```bash
 JavaBdd/evidence
 ```
