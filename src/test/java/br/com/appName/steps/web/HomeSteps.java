@@ -18,6 +18,7 @@ public class HomeSteps {
 
     @E("^acesso a tela de login$")
     public void acessoATelaDeLogin() {
-            this.inicioFuncionalidade.acessaLoginUsuario();
+
+        this.inicioFuncionalidade.acessaLoginUsuario();
     }
 }

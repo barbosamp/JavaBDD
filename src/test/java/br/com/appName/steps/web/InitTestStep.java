@@ -31,8 +31,4 @@ public class InitTestStep extends BaseTest {
         addEvidenciaWeb("Acesso realizado!");
     }
 
-    @E("^realizo logout no sistema$")
-    public void realizoLogoutNoSistema() {
-        this.inicioFuncionalidade.logout();
-    }
 }

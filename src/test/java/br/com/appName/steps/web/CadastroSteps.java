@@ -5,11 +5,11 @@ import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import org.junit.jupiter.api.Assertions;
 
-public class RegistroSteps    {
+public class CadastroSteps {
 
     private RegistroFuncionalidade registroFuncionalidade;
 
-    public RegistroSteps(){
+    public CadastroSteps(){
         this.registroFuncionalidade = new RegistroFuncionalidade();
     }
 

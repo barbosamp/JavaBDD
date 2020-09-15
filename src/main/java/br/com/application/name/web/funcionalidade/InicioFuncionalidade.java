@@ -31,13 +31,4 @@ public class InicioFuncionalidade extends BaseTest {
         addEvidenciaWeb("Tela de login.");
     }
 
-    public void logout(){
-        wait.until(ExpectedConditions.visibilityOf(this.homePage.getLblLogoInicial()));
-        this.homePage.getBtMyAccount().click();
-        addEvidenciaWeb("Realizar Logout!");
-        this.homePage.getBtLogout().click();
-        addEvidenciaWeb("Logout Realizado!");
-    }
-
-
 }
