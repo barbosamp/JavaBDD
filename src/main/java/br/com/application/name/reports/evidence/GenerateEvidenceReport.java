@@ -149,17 +149,13 @@ public class GenerateEvidenceReport {
 					+ properties.getProperty("passed.dir") + System.getProperty("file.separator");
 			break;
 		case "failed":
-			evidenceDir = System.getProperty("user.dir") + System.getProperty("file.separator")
+			case "null":
+				evidenceDir = System.getProperty("user.dir") + System.getProperty("file.separator")
 					+ properties.getProperty("evidence.dir") + System.getProperty("file.separator")
 					+ properties.getProperty("failed.dir") + System.getProperty("file.separator");
 			break;
-		case "null":
-			evidenceDir = System.getProperty("user.dir") + System.getProperty("file.separator")
-					+ properties.getProperty("evidence.dir") + System.getProperty("file.separator")
-					+ properties.getProperty("falha.dir") + System.getProperty("file.separator");
-			break;
 
-		default:
+			default:
 			break;
 
 		}
@@ -168,17 +164,11 @@ public class GenerateEvidenceReport {
 
 		try {
 
-			String companyImage = properties.getProperty("image.company.path");
 			String customerImage = properties.getProperty("image.customer.path");
 
 			BufferedImage imageCompany;
 			BufferedImage imageClient;
 
-			if (companyImage == null || companyImage.equals("null")) {
-				imageCompany = null;
-			} else {
-				imageCompany = ImageIO.read(new File(companyImage));
-			}
 
 			if (customerImage == null || customerImage.equals("null")) {
 				imageClient = null;
@@ -225,8 +215,6 @@ public class GenerateEvidenceReport {
 			if (exception != null) {
 				parameters.put("SEL_EXCEPTION", exception);
 			}
-
-			parameters.put("SEL_COMPANY_LOGO", imageCompany);
 			parameters.put("SEL_CUSTOMER_LOGO", imageClient);
 			parameters.put("SEL_PROJECT", project);
 			parameters.put("SEL_TESTER", tester);
