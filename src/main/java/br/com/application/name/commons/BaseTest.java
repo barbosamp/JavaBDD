@@ -102,6 +102,7 @@ public class BaseTest {
 	 * fecha o driver web
 	 */
 	protected static void closeWeb() {
+
 		webDriver.quit();
 	}
 

@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 
 //Limpar RunTest antes de subir
 
-        tags = {"@cadastro"})
+        tags = {"@login"})
 
 
 public class RunTest extends BaseTest {

@@ -19,6 +19,11 @@ public class HomeSteps {
     @E("^acesso a tela de login$")
     public void acessoATelaDeLogin() {
 
-        this.inicioFuncionalidade.acessaLoginUsuario();
+//        this.inicioFuncionalidade.acessaLoginUsuario();
+    }
+
+    @E("^realizo logout no sistema$")
+    public void realizoLogoutNoSistema() {
+        this.inicioFuncionalidade.realizaLogoutUsuario();
     }
 }

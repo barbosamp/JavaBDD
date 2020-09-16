@@ -21,11 +21,14 @@ public class HomePage {
     @FindBy(xpath = "//a[text()='Your Store']")
     private WebElement lblLogoInicial;
 
-    @FindBy(xpath = "//a[text()='Logout']")
+    @FindBy(xpath = "//a[text()='Logout' and ancestor::ul]")
     private WebElement btLogout;
 
     @FindBy(xpath = "//a[text()='Login']")
     private WebElement btLogin;
+
+    @FindBy(xpath = "//div[@id='content']/h1")
+    private WebElement lblLogout;
 
     public WebElement getBtMyAccount() {
         return btMyAccount;
@@ -39,11 +42,15 @@ public class HomePage {
         return lblLogoInicial;
     }
 
+    public WebElement getBtLogin() {
+        return btLogin;
+    }
+
     public WebElement getBtLogout() {
         return btLogout;
     }
 
-    public WebElement getBtLogin() {
-        return btLogin;
+    public WebElement getLblLogout() {
+        return lblLogout;
     }
 }
